@@ -8,17 +8,17 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    static: './dist',
+    static: { directory: './dist' },
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "ToDo's",
+      template: './src/index.html',
     }),
   ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
   },
   optimization: {
     runtimeChunk: 'single',
