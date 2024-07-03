@@ -1,2 +1,12 @@
 ideas:
-  - 
+  - "first idea"
+    - creating a warp for the entire ui instead of using the body node
+    - using display flex grid for its easy to use and reliable fractional functions
+  - "alternative"
+    - none
+  - "second idea"
+    - this project has some ui inspiration (after searching google)
+    - to prevent to complexity i wont be adding any other features besides one relating to to do list
+    - do not include upcoming, today, calendar, tags, settings, sign out
+      - include: sticky wall, lists the color coates the "sticky paper"
+  
