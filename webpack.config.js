@@ -26,6 +26,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   optimization: {
     runtimeChunk: 'single',
@@ -39,6 +40,9 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
+        }, // might actually need this for when rendered to javascript
       },
     ],
   },

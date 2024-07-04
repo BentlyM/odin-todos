@@ -102,6 +102,7 @@ nav {
   .content-sect {
     display: flex;
     align-items: center;
+    gap: 5px;
     font-size: small;
     border-radius: 10px;
     cursor: pointer;
@@ -122,6 +123,6 @@ nav {
   }
 
   .nav-icon {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
   }
