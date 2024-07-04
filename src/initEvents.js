@@ -6,7 +6,8 @@ export const initializeEvents = () => {
         item.addEventListener('click', (event) => {
             console.log(event.target.textContent);
             Tabs().changeTitle(event.target.textContent);
+        })
     })
 
-
-})}
+    
+}
