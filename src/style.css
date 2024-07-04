@@ -25,6 +25,7 @@ body {
     width: 100%;
     height: 100%;
     display: grid;
+    gap: 5px;
     grid-template-columns: 1fr 3fr;
 }
 
@@ -107,6 +108,8 @@ nav {
     border-radius: 10px;
     cursor: pointer;
   }
+
+  /* Task sect */
   
   input[type="radio"] {
     display: none;
@@ -125,4 +128,15 @@ nav {
   .nav-icon {
     width: 15px;
     height: 15px;
+  }
+
+  /* main and container */
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    display: grid;
   }
