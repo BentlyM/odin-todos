@@ -120,3 +120,8 @@ nav {
   .content-sect:hover {
     background-color: #f0f0f0;
   }
+
+  .nav-icon {
+    width: 10px;
+    height: 10px;
+  }
