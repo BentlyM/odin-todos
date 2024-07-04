@@ -20,3 +20,7 @@ ideas for Tabs :
     - how are you going to create the event Listener functionality 
       - possibly create separate module for Initializing event listeners
         - prob gonna call tabs class inside there instead of index.js
+
+current bugs: 
+  - items besides task for example list cant alter the header title
+    - reason because the query selector all takes every shared item of that class
