@@ -1,4 +1,3 @@
-
 function labelForControl(el){
     let idVal = el.id;
     const labels = document.querySelectorAll('label');

@@ -17,3 +17,6 @@ ideas for Tabs :
     - how will you place the text label text content as the Head title
       - we could try implementing a if statement to the radio value
         - if radio value checked assign label return value to header Title
+    - how are you going to create the event Listener functionality 
+      - possibly create separate module for Initializing event listeners
+        - prob gonna call tabs class inside there instead of index.js

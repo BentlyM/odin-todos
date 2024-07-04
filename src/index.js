@@ -1,8 +1,8 @@
 import './style.css';
-import Tabs from './tabs.js';
+import { initializeEvents } from './initEvents.js';
 
 function component() {
-    new Tabs().changeTitle();
+    initializeEvents();
 }
 
 component();
