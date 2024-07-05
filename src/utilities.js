@@ -1,3 +1,4 @@
+import { CalendarComponent } from "./calendarLayout";
 import { StickyComponent } from "./stickyLayout";
 import { TodayComponent } from "./todayLayout";
 import { UpcomingComponent } from "./upcomingLayout";
@@ -19,7 +20,7 @@ function getComponent(component){
         case 'Today':
             return TodayComponent().TodayLayout
         case 'Calendar':
-            return UpcomingComponent().UpcomingLayout
+            return CalendarComponent().CalendarLayout
         case 'Sticky Wall':
             return StickyComponent().stickyLayout
         default:
