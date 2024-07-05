@@ -15,20 +15,16 @@ export default function Tabs(){
 
             switch(choice){
                 case 'Upcoming':
-                    title.textContent = label(this.upcoming).innerText;
-                    break;
+                    return title.textContent = label(this.upcoming).innerText;
                 case 'Today':
-                    title.textContent = label(this.today).innerText;
-                    break;
+                    return title.textContent = label(this.today).innerText;
                 case 'Calendar':
-                    title.textContent = label(this.calendar).innerText;
-                    break;
+                    return title.textContent = label(this.calendar).innerText;
                 case 'Sticky Wall':
-                    title.textContent = label(this.stickyWall).innerText;
-                    break;
+                    return title.textContent = label(this.stickyWall).innerText;
                 default:
                     title.textContent = undefined;
-                }
+            }
         }
     }
 }
