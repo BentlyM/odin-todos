@@ -28,5 +28,10 @@ function getComponent(component){
     }
 }
 
+function getImage(image){
+    const CurrentImage = new Image();
+    CurrentImage.src = image;
 
-export {labelForControl , getComponent};
+    return CurrentImage;
+}
+export {labelForControl , getComponent, getImage};

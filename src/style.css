@@ -46,6 +46,7 @@ nav {
     height: 95%;
     border-radius: 10px;
     background-color: #f3f4f6;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .nav-top {
@@ -143,6 +144,7 @@ nav {
     height: 100%;
   }
 
+  /* Sticky container stuff */
   .stickyContainer {
     display: grid;
     width: 95%;
@@ -156,9 +158,37 @@ nav {
 
   .Card {
     margin-top: 1px;
-    border: 1px solid black;
     border-radius: 10px;
     min-height: 245px;
     align-self: center;
     overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
+
+  #includeCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f5;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor: pointer;
+    & > img {
+      width: 25%;
+      height: 25%;
+    }
+  }
+
+  #includeCard:hover {
+    background: rgba(241, 245, 249, 0.959);
+  }
+
+  #includeCard:active {
+    background: rgba(241, 245, 249, 0.904);
+    top: 2px;
+  }
+
+  /* other for rn */
