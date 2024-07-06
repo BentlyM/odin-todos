@@ -34,4 +34,12 @@ function getImage(image){
 
     return CurrentImage;
 }
-export {labelForControl , getComponent, getImage};
+
+function createCard(){
+    const newCard = document.createElement('div');
+    newCard.classList.add('Card');
+
+    return newCard;
+}
+
+export {labelForControl , getComponent, getImage, createCard};

@@ -1,8 +1,8 @@
 import plusImg from './images/Plus.png'
 import { getImage } from './utilities';
+import { initializeEvents } from './initEvents';
 
 export const StickyComponent = () => {
-    let stickyWallNotes = [];
 
     const stickyLayout = document.createElement('div');
     stickyLayout.classList.add('stickyContainer');
@@ -11,7 +11,8 @@ export const StickyComponent = () => {
     includeCard.classList.add('Card');
     includeCard.id = 'includeCard';
     stickyLayout.appendChild(includeCard);
-    includeCard.appendChild(getImage(plusImg))
+    includeCard.appendChild(getImage(plusImg));
+    initializeEvents().click(includeCard);
 
     return {
         stickyLayout

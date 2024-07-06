@@ -21,6 +21,30 @@ ideas for Tabs :
       - possibly create separate module for Initializing event listeners
         - prob gonna call tabs class inside there instead of index.js
 
+ideas for sticky wall: 
+  - how do you plan to create a task?
+    - user press a button
+  - how do you plan to display the form for the user?
+    - once the user press the button change the display of the form
+      - the form position is probably going to have to be absolute or fixed
+    - once form complete append form information to card (all information must be filled) ( might have to include that trick to prevent the default functionality of forms from refreshing the page)
+    - where does the data go?
+      - i want the form information to be inside a object which gets pushed into in array possibly in descending order (it must be the same order as the cards)
+        - this way if another tab is chosen and the function is destroyed the cards 
+        the card data will still exist
+      - how will the information be passed back into the sticky notes container?
+        - create logic for reading the information on the card
+        - once read use or create a way to append the information back onto the sticky notes container
+    - should there be a limit on how many notes can taken?
+      - i think the max amount of notes should be 10 per project
+
+  - what if the user does not file out the form?
+    - prevent the card from being created
+
 current bugs: 
   - items besides task for example list cant alter the header title
     - reason because the query selector all takes every shared item of that class
+
+resources:
+  resource for creating pop forms -> https://www.w3docs.com/tools/code-editor/12101
+  
