@@ -1,6 +1,7 @@
 import Tabs from './tabs.js';
 import { getComponent , createCard } from './utilities.js';
 import {generateSticky} from './createSticky.js';
+import { Modal } from './modal.js';
 
 export const initializeEvents = () => {
 
@@ -18,11 +19,12 @@ export const initializeEvents = () => {
     })
 
     const click = (param) => {
-        param.addEventListener('click', ()=>{generateSticky(createCard());});
+        param.addEventListener('click', ()=>{generateSticky(createCard())});
 
     }
 
     return {
         click,
+        container,
     }
 }
