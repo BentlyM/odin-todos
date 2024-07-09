@@ -13,13 +13,31 @@ export function generateForm(){
     // might have to call generateSticky here? or inside submit button event listener inside of the modal
 }
 
-export function generateSticky(generateCard){
+export function generateSticky(generateCard) {
     const stickyContainer = document.querySelector('.stickyContainer');
-    const title = document.querySelector('#TITLE'); // test to see if i can grab value.
-
-
+    const title = document.querySelector('#TITLE').value;
+    const taskOrProject = document.querySelector('#Project').value;
+    const priority = document.querySelector('#Priority').value;
+    const message = document.querySelector('#Message').value;
+  
+    let cardColor;
+    switch (priority) {
+      case 'High':
+        cardColor = 'red';
+        break;
+      case 'Medium':
+        cardColor = 'orange';
+        break;
+      case 'Low':
+        cardColor = 'green';
+        break;
+      default:
+        cardColor = 'gray';
+    }
+  
+    generateCard.style.borderLeft = `8px solid ${cardColor}`;
+  
     stickyContainer.appendChild(generateCard);
-    
-}
+  }
 
 
