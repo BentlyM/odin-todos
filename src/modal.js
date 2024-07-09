@@ -1,4 +1,7 @@
 // modal.js
+import { generateSticky } from "./createSticky";
+import { createCard } from "./utilities";
+
 class Modal {
   static instance = null;
 
@@ -35,10 +38,10 @@ class Modal {
     formElement.action = "/";
 
     const formFields = [
-      { label: "Title*", type: "text", placeholder: "Title" },
+      { label: "Title*", type: "text", placeholder: "Title" }, // gotta grab this value
       { label: "Project", type: "select", options: ["None", "Project"] },
       { label: "Priority", type: "select", options: ["High", "Medium", "Low"] },
-      { label: "Due Date", type: "Date", placeholder: "Due Date" },
+      { label: "Due Date", type: "Date", placeholder: "DueDate" }, // gotta grab this value
     ];
 
     const formFieldElements = formFields.map((field) => {
@@ -58,6 +61,7 @@ class Modal {
         inputElement = document.createElement("input");
         inputElement.type = field.type;
         inputElement.name = "name";
+        inputElement.id = field.placeholder.toUpperCase();
         inputElement.placeholder = field.placeholder;
       }
 
@@ -76,8 +80,9 @@ class Modal {
 
     const submitButtonElement = document.createElement("button");
     submitButtonElement.addEventListener('click', (event)=>{
-      event.preventDefault()
-    
+      event.preventDefault();
+      generateSticky(createCard());
+      this.hide();
     });
     submitButtonElement.type = "submit";
     submitButtonElement.innerHTML = "Submit";
@@ -107,12 +112,13 @@ class Modal {
   }
 
   show() {
-   this.modalElement.style.display = "block";
+    this.modalElement.style.display = "block";
+   }
+ 
+  hide() {
+     this.modalElement.style.display = "none";
   }
 
-  hide() {
-    this.modalElement.style.display = "none";
-  }
 }
 
   export {Modal}
