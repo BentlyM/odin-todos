@@ -15,6 +15,7 @@ export const initializeEvents = () => {
             }else{
                 container.appendChild(getComponent(component));
             }
+            event.stopImmediatePropagation();
         })
     })
 
@@ -22,8 +23,17 @@ export const initializeEvents = () => {
         param.addEventListener('click', ()=>{generateForm()});
     }
 
+    const selectionEvent = () => {
+        const projectSelect = document.querySelector('#Project');
+        const formTitle = document.querySelector('#formTitle');
+        projectSelect.addEventListener('change', (event)=>{
+            formTitle.innerText = (event.target.value === 'None') ? 'Task' : 'Project';
+        })
+    }
+
     return {
         click,
         container,
+        selectionEvent,
     }
 }

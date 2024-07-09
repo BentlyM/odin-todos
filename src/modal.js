@@ -51,6 +51,7 @@ class Modal {
       let inputElement;
       if (field.type === "select") {
         inputElement = document.createElement("select");
+        inputElement.id = field.label;
         field.options.forEach((option) => {
           const optionElement = document.createElement("option");
           optionElement.value = option;
@@ -72,6 +73,8 @@ class Modal {
       return fieldElement;
     });
 
+    const messageContainer = document.createElement("div");
+
     const messageElement = document.createElement("span");
     messageElement.innerHTML = "Message";
 
@@ -89,9 +92,13 @@ class Modal {
 
     formElement.appendChild(this.createHeadingElement(this.type));
     formFieldElements.forEach((element) => formElement.appendChild(element));
-    formElement.appendChild(messageElement);
-    formElement.appendChild(textareaElement);
-    formElement.appendChild(submitButtonElement);
+    formElement.appendChild(messageContainer);
+    messageContainer.appendChild(messageElement);
+    messageContainer.appendChild(textareaElement);
+    messageContainer.appendChild(submitButtonElement);
+    messageContainer.style.display = "flex";
+    messageContainer.style.flexDirection = "column";
+    messageContainer.style.alignItems = "center"
 
     contactFormElement.appendChild(closeButtonElement);
     contactFormElement.appendChild(formElement);
@@ -107,7 +114,8 @@ class Modal {
 
   createHeadingElement(type) {
     const headingElement = document.createElement("h2");
-    headingElement.innerHTML = type === "None"? "Task" : "Project";
+    headingElement.id = "formTitle";
+    headingElement.innerHTML = type === "Project"? "Project" : "Task";
     return headingElement;
   }
 
