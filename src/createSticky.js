@@ -46,7 +46,8 @@ export function generateSticky(generateCard) {
         const projectFolderImg = getImage(folderImg, 150, 150);
         generateCard.classList.add('projectFolder');
         generateCard.appendChild(projectFolderImg);
-        
+        generateCard.appendChild(currentData.messageElem);
+
     }else{
       generateCard.appendChild(currentData.cardInfoContainer);
       generateCard.classList.add('stickyTask');

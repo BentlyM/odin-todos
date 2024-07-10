@@ -77,6 +77,7 @@ class Modal {
 
     const messageElement = document.createElement("span");
     messageElement.innerHTML = "Message";
+    messageElement.classList.add('text-message');
 
     const textareaElement = document.createElement("textarea");
     textareaElement.id = 'Message'

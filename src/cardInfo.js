@@ -15,6 +15,8 @@ export function cardData(title , message) {
     cardInfoContainer.appendChild(messageElem);
 
     return {
-        cardInfoContainer
+        cardInfoContainer,
+        messageElem,
+        titleElem
     };
 }

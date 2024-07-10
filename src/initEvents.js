@@ -26,8 +26,10 @@ export const initializeEvents = () => {
     const selectionEvent = () => {
         const projectSelect = document.querySelector('#Project');
         const formTitle = document.querySelector('#formTitle');
+        const text = document.querySelector('.text-message')
         projectSelect.addEventListener('change', (event)=>{
             formTitle.innerText = (event.target.value === 'None') ? 'Task' : 'Project';
+            text.innerText = (event.target.value === 'None') ? 'Message' : 'Description';
         })
     }
 
