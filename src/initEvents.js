@@ -1,7 +1,7 @@
 import Tabs from './tabs.js';
-import { getComponent , createCard } from './utilities.js';
-import {generateSticky} from './createSticky.js';
-import { Modal } from './modal.js';
+import { getComponent } from './utilities.js';
+import {generateForm} from './createSticky.js';
+
 
 export const initializeEvents = () => {
 
@@ -15,16 +15,27 @@ export const initializeEvents = () => {
             }else{
                 container.appendChild(getComponent(component));
             }
+            event.stopImmediatePropagation();
         })
     })
 
     const click = (param) => {
-        param.addEventListener('click', ()=>{generateSticky(createCard())});
+        param.addEventListener('click', ()=>{generateForm()});
+    }
 
+    const selectionEvent = () => {
+        const projectSelect = document.querySelector('#Project');
+        const formTitle = document.querySelector('#formTitle');
+        const text = document.querySelector('.text-message')
+        projectSelect.addEventListener('change', (event)=>{
+            formTitle.innerText = (event.target.value === 'None') ? 'Task' : 'Project';
+            text.innerText = (event.target.value === 'None') ? 'Message' : 'Description';
+        })
     }
 
     return {
         click,
         container,
+        selectionEvent,
     }
 }

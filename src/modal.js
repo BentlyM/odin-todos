@@ -1,4 +1,7 @@
 // modal.js
+import { generateSticky } from "./createSticky";
+import { createCard } from "./utilities";
+
 class Modal {
   static instance = null;
 
@@ -35,10 +38,10 @@ class Modal {
     formElement.action = "/";
 
     const formFields = [
-      { label: "Title*", type: "text", placeholder: "Title" },
+      { label: "Title*", type: "text", placeholder: "Title" }, // gotta grab this value
       { label: "Project", type: "select", options: ["None", "Project"] },
       { label: "Priority", type: "select", options: ["High", "Medium", "Low"] },
-      { label: "Due Date", type: "Date", placeholder: "Due Date" },
+      { label: "Due Date", type: "Date", placeholder: "DueDate" }, // gotta grab this value
     ];
 
     const formFieldElements = formFields.map((field) => {
@@ -48,6 +51,7 @@ class Modal {
       let inputElement;
       if (field.type === "select") {
         inputElement = document.createElement("select");
+        inputElement.id = field.label;
         field.options.forEach((option) => {
           const optionElement = document.createElement("option");
           optionElement.value = option;
@@ -58,6 +62,7 @@ class Modal {
         inputElement = document.createElement("input");
         inputElement.type = field.type;
         inputElement.name = "name";
+        inputElement.id = field.placeholder.toUpperCase();
         inputElement.placeholder = field.placeholder;
       }
 
@@ -68,25 +73,34 @@ class Modal {
       return fieldElement;
     });
 
+    const messageContainer = document.createElement("div");
+
     const messageElement = document.createElement("span");
     messageElement.innerHTML = "Message";
+    messageElement.classList.add('text-message');
 
     const textareaElement = document.createElement("textarea");
+    textareaElement.id = 'Message'
     textareaElement.rows = 4;
 
     const submitButtonElement = document.createElement("button");
     submitButtonElement.addEventListener('click', (event)=>{
-      event.preventDefault()
-    
+      event.preventDefault();
+      generateSticky(createCard());
+      this.hide();
     });
     submitButtonElement.type = "submit";
     submitButtonElement.innerHTML = "Submit";
 
     formElement.appendChild(this.createHeadingElement(this.type));
     formFieldElements.forEach((element) => formElement.appendChild(element));
-    formElement.appendChild(messageElement);
-    formElement.appendChild(textareaElement);
-    formElement.appendChild(submitButtonElement);
+    formElement.appendChild(messageContainer);
+    messageContainer.appendChild(messageElement);
+    messageContainer.appendChild(textareaElement);
+    messageContainer.appendChild(submitButtonElement);
+    messageContainer.style.display = "flex";
+    messageContainer.style.flexDirection = "column";
+    messageContainer.style.alignItems = "center"
 
     contactFormElement.appendChild(closeButtonElement);
     contactFormElement.appendChild(formElement);
@@ -102,17 +116,19 @@ class Modal {
 
   createHeadingElement(type) {
     const headingElement = document.createElement("h2");
-    headingElement.innerHTML = type === "None"? "Task" : "Project";
+    headingElement.id = "formTitle";
+    headingElement.innerHTML = type === "Project"? "Project" : "Task";
     return headingElement;
   }
 
   show() {
-   this.modalElement.style.display = "block";
+    this.modalElement.style.display = "block";
+   }
+ 
+  hide() {
+     this.modalElement.style.display = "none";
   }
 
-  hide() {
-    this.modalElement.style.display = "none";
-  }
 }
 
   export {Modal}
