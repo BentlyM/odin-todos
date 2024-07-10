@@ -1,5 +1,8 @@
 import { initializeEvents } from "./initEvents";
 import { Modal } from './modal.js';
+import { cardData } from "./cardInfo.js";
+import folderImg from './images/folder.png';
+import { getImage } from "./utilities.js";
 
 export function generateForm(){
 
@@ -15,10 +18,10 @@ export function generateForm(){
 
 export function generateSticky(generateCard) {
     const stickyContainer = document.querySelector('.stickyContainer');
-    const title = document.querySelector('#TITLE').value;
-    const taskOrProject = document.querySelector('#Project').value;
+    const title = document.querySelector('#TITLE');
+    const taskOrProject = document.querySelector('#Project');
     const priority = document.querySelector('#Priority').value;
-    const message = document.querySelector('#Message').value;
+    const message = document.querySelector('#Message');
   
     let cardColor;
     switch (priority) {
@@ -36,7 +39,19 @@ export function generateSticky(generateCard) {
     }
   
     generateCard.style.borderLeft = `8px solid ${cardColor}`;
-  
+
+    const currentData = cardData(title.value, message.value);
+
+    if(taskOrProject.value === "Project"){
+        const projectFolderImg = getImage(folderImg, 150, 150);
+        generateCard.classList.add('projectFolder');
+        generateCard.appendChild(projectFolderImg);
+        
+    }else{
+      generateCard.appendChild(currentData.cardInfoContainer);
+      generateCard.classList.add('stickyTask');
+    }
+
     stickyContainer.appendChild(generateCard);
   }
 

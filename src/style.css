@@ -157,6 +157,10 @@ nav {
   }
 
   .Card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-top: 1px;
     border-radius: 10px;
     min-height: 245px;
@@ -311,4 +315,10 @@ nav {
 
 .show {
   display: block;
+}
+
+/* Project Folder */
+
+.projectFolder {
+  cursor: pointer;
 }

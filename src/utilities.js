@@ -28,8 +28,8 @@ function getComponent(component){
     }
 }
 
-function getImage(image){
-    const CurrentImage = new Image();
+function getImage(image , w , h){
+    const CurrentImage = new Image(w , h);
     CurrentImage.src = image;
 
     return CurrentImage;
