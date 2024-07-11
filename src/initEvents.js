@@ -34,6 +34,12 @@ export const initializeEvents = () => {
             event.stopImmediatePropagation();
         });
     });
+
+    document.getElementById('createList').addEventListener('click', ()=>{
+        // add something here
+        console.log('');
+    })
+
 }
 
 export const selectionEvent = () => {
