@@ -34,10 +34,6 @@ export const initializeEvents = () => {
             event.stopImmediatePropagation();
         });
     });
-
-    return {
-        container,
-    }
 }
 
 export const selectionEvent = () => {
