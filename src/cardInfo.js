@@ -1,5 +1,3 @@
-import folderImg from './images/folder.png';
-
 export function cardData(title , message) {
     const cardInfoContainer = document.createElement('div');
     cardInfoContainer.style.maxWidth = '80%';
