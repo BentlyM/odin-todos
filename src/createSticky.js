@@ -1,4 +1,4 @@
-import { initializeEvents } from "./initEvents";
+import { selectionEvent } from "./initEvents";
 import { Modal } from './modal.js';
 import { cardData } from "./cardInfo.js";
 import folderImg from './images/folder.png';
@@ -10,8 +10,8 @@ export function generateForm(){
     const currentModal = new Modal();
     currentModal.classList.toggle('show');
     
-    initializeEvents().container.appendChild(currentModal);
-    initializeEvents().selectionEvent();
+    document.querySelector('.container').appendChild(currentModal);
+    selectionEvent();
 
     // might have to call generateSticky here? or inside submit button event listener inside of the modal
 }

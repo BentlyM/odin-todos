@@ -1,6 +1,6 @@
+import { generateForm } from './createSticky';
 import plusImg from './images/Plus.png'
 import { getImage } from './utilities';
-import { initializeEvents } from './initEvents';
 
 export const StickyComponent = () => {
 
@@ -12,7 +12,7 @@ export const StickyComponent = () => {
     includeCard.id = 'includeCard';
     stickyLayout.appendChild(includeCard);
     includeCard.appendChild(getImage(plusImg));
-    initializeEvents().click(includeCard);
+    includeCard.onclick = () => {generateForm()};
 
     return {
         stickyLayout

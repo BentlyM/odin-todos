@@ -1,6 +1,5 @@
 import Tabs from './tabs.js';
 import { getComponent } from './utilities.js';
-import { generateForm } from './createSticky.js';
 
 export const initializeEvents = () => {
     const container = document.querySelector('.container');
@@ -36,28 +35,18 @@ export const initializeEvents = () => {
         });
     });
 
-    // Handle click events for generating forms
-    const click = (param) => {
-        param.addEventListener('click', () => {
-            generateForm();
-        });
-    }
-
-    // Handle selection events for changing form titles and texts
-    const selectionEvent = () => {
-        const projectSelect = document.querySelector('#Project');
-        const formTitle = document.querySelector('#formTitle');
-        const text = document.querySelector('.text-message');
-
-        projectSelect.addEventListener('change', (event) => {
-            formTitle.innerText = (event.target.value === 'None') ? 'Task' : 'Project';
-            text.innerText = (event.target.value === 'None') ? 'Message' : 'Description';
-        });
-    }
-
     return {
-        click,
         container,
-        selectionEvent,
     }
+}
+
+export const selectionEvent = () => {
+    const projectSelect = document.querySelector('#Project');
+    const formTitle = document.querySelector('#formTitle');
+    const text = document.querySelector('.text-message');
+
+    projectSelect.addEventListener('change', (event) => {
+        formTitle.innerText = (event.target.value === 'None') ? 'Task' : 'Project';
+        text.innerText = (event.target.value === 'None') ? 'Message' : 'Description';
+    });
 }
