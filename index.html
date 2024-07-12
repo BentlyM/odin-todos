@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo's</title>
+<script defer src="./runtime.bundle.js"></script><script defer src="./index.bundle.js"></script></head>
+<body>
+    <div class="ToDo-UI">
+        <header>
+            <nav>
+                <div class="nav-top">
+                    <span id="menu">Menu</span>
+                    <div id="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <input type="text" name="search" id="search-bar" placeholder="Search..." disabled>
+
+                <div class="nav-card">
+                    <span class="nav-title" id="tasks-1">TASKS</span>
+                    <div class="nav-content">
+                      <input type="radio" id="Upcoming" name="nav-radio">
+                      <label for="Upcoming" class="content-sect"><img src="./images/upcoming-icon.png" class="nav-icon" id="upcoming-icon" alt="arrow-img">Upcoming</label>
+                      <input type="radio" id="Today" name="nav-radio">
+                      <label for="Today" class="content-sect"><img src="./images/today-icon.png" class="nav-icon" id="today-icon"  alt="checklist-img">Today</label>
+                      <input type="radio" id="Calendar" name="nav-radio">
+                      <label for="Calendar" class="content-sect"><img src="./images/calendar-icon.png" class="nav-icon" id="calendar-icon" alt="calendar-img">Calendar</label>
+                      <input type="radio" id="StickyWall" name="nav-radio" checked="checked">
+                      <label for="StickyWall" class="content-sect"><img src="./images/stickynote-icon.png" class="nav-icon" alt="checklist-img">Sticky Wall</label>
+                    </div>
+                  </div>
+
+                <div class="nav-card">
+                    <div class="list-card">
+                        <span class="nav-title" id="lists-1">LIST</span>
+                        <div class="nav-content" id="list-content">
+                            <button id="createList"> + Add New List </button>
+                            <input type="button" value="Default">
+                        </div>
+                      </div>
+                </div>
+                <div class="nav-card">
+                    <span class="nav-title" id="card-3">TAGS</span>
+                        <div class="nav-content" id="tag-content">
+                            <div>
+                                <input type="color" id="Red" name="list-color" value="#FF0000">
+                                <label for="Red" class="content-sect" style="width: 100%;">High priority</label>
+                            </div>
+                            <div>
+                                <input type="color" id="Orange" name="list-color" value="#FFA500">
+                                <label for="Orange" class="content-sect" style="width: 100%;">Standard priority</label>
+                            </div>
+                            <div>
+                                <input type="color" id="Yellow" name="list-color" value="#008000">
+                                <label for="Yellow" class="content-sect" style="width: 100%;">Low priority</label>
+                            </div>
+                    </div>
+                </div>
+                <div class="nav-card">
+                    <span class="nav-title" id="card-4">OTHER</span>
+                    <div class="nav-content">
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h1 style="font-size: 3rem;" id="tab-title"></h1> <!--This will have to be Dynamic depending on which wall is picked-->
+            <div class="container">
+            </div>
+        </main>
+    </div>
+</body>
+</html>
