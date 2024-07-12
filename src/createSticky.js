@@ -8,7 +8,6 @@ export function generateForm(){
 
     /* in generate sticky prob gonna have to add the prompt functionality here so */
     const currentModal = new Modal();
-    currentModal.classList.toggle('show');
     
     document.querySelector('.container').appendChild(currentModal);
     selectionEvent();
@@ -48,12 +47,10 @@ export function generateSticky(generateCard) {
       generateCard.appendChild(currentData.titleElem);
       generateCard.appendChild(currentData.messageElem);
       generateCard.appendChild(currentData.taskOrProjectElem);
-      generateCard.style.borderLeft = currentData.priorityColor;
       generateCard.appendChild(projectFolderImg);
     }else{
       generateCard.appendChild(currentData.cardContainer);
       generateCard.classList.add('stickyTask');
-      generateCard.style.borderLeft = currentData.priorityColor;
     }
 
     stickyContainer.appendChild(generateCard);

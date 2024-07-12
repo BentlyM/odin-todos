@@ -30,21 +30,6 @@ export function cardData(title, message, priority, taskOrProject) {
     taskOrProjectElem.style.color = '#999';
     taskOrProjectElem.style.fontStyle = 'italic';
   
-    let cardColor;
-    switch (priority) {
-      case 'High':
-        cardColor = 'red';
-        break;
-      case 'Medium':
-        cardColor = 'orange';
-        break;
-      case 'Low':
-        cardColor = 'green';
-        break;
-      default:
-        cardColor = 'gray';
-    }
-  
     cardContainer.appendChild(titleElem);
     cardContainer.appendChild(messageElem);
     cardContainer.appendChild(taskOrProjectElem);
@@ -54,6 +39,6 @@ export function cardData(title, message, priority, taskOrProject) {
       titleElem,
       messageElem,
       taskOrProjectElem,
-      priorityColor: `8px solid ${cardColor}`,
+      priority
     };
   }

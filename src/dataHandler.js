@@ -4,7 +4,7 @@ export class NoteData {
         this.container = container;
         this.includeCard = includeCard;
         this.agenda = [];
-        this.includeCard.addEventListener('click',()=>{this.readStickyContainer()});
+        this.readStickyContainer()
     }
 
     readStickyContainer(){
@@ -14,8 +14,12 @@ export class NoteData {
             this.container.childNodes.forEach(element => {
                 if (element.id === "includeCard") return;
 
-                if (element === this.container.lastChild) this.agenda.push(element);
+                if (element === this.container.lastChild) { this.agenda.push(element); console.log(this.agenda); } ;
             });
         });
+    }
+
+    NotePriority(card){
+        console.log(card);
     }
 }

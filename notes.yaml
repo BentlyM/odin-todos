@@ -44,8 +44,9 @@ ideas for sticky wall:
 current bugs: 
   - items besides task for example list cant alter the header title (fixed)
     - reason because the query selector all takes every shared item of that class (fixed)
-  - card generates before form is completed 
-    - possible fix instead of generating card when card button pressed do it when form is submitted 
+  - card generates before form is completed (fixed)
+    - possible fix instead of generating card when card button pressed do it when form is submitted (incorporated)
+  - bug where the includeCard 
 
 resources:
   resource for creating pop forms -> https://www.w3docs.com/tools/code-editor/12101
