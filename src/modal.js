@@ -90,6 +90,7 @@ class Modal {
       this.hide();
     });
     submitButtonElement.type = "submit";
+    submitButtonElement.id = "submitForm";
     submitButtonElement.innerHTML = "Submit";
 
     formElement.appendChild(this.createHeadingElement(this.type));
