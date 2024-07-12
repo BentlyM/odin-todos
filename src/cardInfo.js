@@ -1,5 +1,9 @@
 export function cardData(title, message, priority, taskOrProject) {
     const cardContainer = document.createElement('div');
+    cardContainer.style.display = 'flex';
+    cardContainer.style.flexDirection = 'column';
+    cardContainer.style.justifyContent = 'center';
+    cardContainer.style.alignItems = 'center';
   
     const titleElem = document.createElement('h3');
     titleElem.className = 'card-title';
@@ -15,6 +19,9 @@ export function cardData(title, message, priority, taskOrProject) {
     messageElem.style.fontSize = '16px';
     messageElem.style.color = '#666';
     messageElem.style.marginBottom = '16px';
+    messageElem.style.textAlign = 'center';
+    messageElem.style.overflowY = 'scroll';
+    messageElem.style.maxHeight = '100px';
   
     const taskOrProjectElem = document.createElement('p');
     taskOrProjectElem.className = 'card-task-or-project';

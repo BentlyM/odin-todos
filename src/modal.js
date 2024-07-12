@@ -82,6 +82,7 @@ class Modal {
     const textareaElement = document.createElement("textarea");
     textareaElement.id = 'Message'
     textareaElement.rows = 4;
+    textareaElement.maxLength = 500;
 
     const submitButtonElement = document.createElement("button");
     submitButtonElement.addEventListener('click', (event)=>{
