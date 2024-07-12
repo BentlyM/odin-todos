@@ -18,7 +18,7 @@ export const StickyComponent = () => {
 
     if(stickyLayout){
         console.log('first try');
-        const stickyNoteData = new NoteData(stickyLayout , includeCard);
+        new NoteData(stickyLayout , includeCard);
     }
 
     return {

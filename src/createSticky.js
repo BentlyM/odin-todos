@@ -40,17 +40,20 @@ export function generateSticky(generateCard) {
   
     generateCard.style.borderLeft = `8px solid ${cardColor}`;
 
-    const currentData = cardData(title.value, message.value);
+    const currentData = cardData(title.value, message.value, priority, taskOrProject.value);
 
     if(taskOrProject.value === "Project"){
-        const projectFolderImg = getImage(folderImg, 150, 150);
-        generateCard.classList.add('projectFolder');
-        generateCard.appendChild(projectFolderImg);
-        generateCard.appendChild(currentData.messageElem);
-
+      const projectFolderImg = getImage(folderImg, 30, 30); 
+      generateCard.classList.add('projectFolder');
+      generateCard.appendChild(currentData.titleElem);
+      generateCard.appendChild(currentData.messageElem);
+      generateCard.appendChild(currentData.taskOrProjectElem);
+      generateCard.style.borderLeft = currentData.priorityColor;
+      generateCard.appendChild(projectFolderImg);
     }else{
-      generateCard.appendChild(currentData.cardInfoContainer);
+      generateCard.appendChild(currentData.cardContainer);
       generateCard.classList.add('stickyTask');
+      generateCard.style.borderLeft = currentData.priorityColor;
     }
 
     stickyContainer.appendChild(generateCard);
